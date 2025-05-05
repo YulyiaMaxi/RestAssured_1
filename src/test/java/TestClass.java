@@ -1,13 +1,12 @@
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.*;
-
 import java.time.Clock;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static io.restassured.RestAssured.given;
 
 public class TestClass {
     public String URI = "https://reqres.in";
@@ -122,8 +121,8 @@ public class TestClass {
                 .then()
                 .log().all()
                 .extract().as(UserTimeNew.class);
-        String regex = "(.{5})$";
-        String regex2 = "(.{11})$";
+        String regex = "(.{9})$";
+        String regex2 = "(.{15})$";
         String currentTime = Clock.systemUTC().instant().toString().replaceAll(regex2, "");//  cоздаем переменную для текущего времени НА КОМПЬЮТЕРЕ и "отрезаем" последние 5 символов через метод replace на ничто
         Assert.assertEquals(userNew.getUpdateAt().replaceAll(regex, ""), currentTime);
         System.out.println(userNew.getUpdateAt().replaceAll(regex, ""));
