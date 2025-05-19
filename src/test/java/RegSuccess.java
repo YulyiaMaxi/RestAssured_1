@@ -1,7 +1,7 @@
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RegistrationSuccess {
+public class ReggitSuccess {
     private static Integer id;
 
     public static Integer getId() {
