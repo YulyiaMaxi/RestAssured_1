@@ -42,7 +42,7 @@ public class TestClass {
     }
 
     @Test
-    public void checkSuccessRegistrationTest() {
+    public void checkSuccessRegistTest() {
         Specifications.installSpecifications(Specifications.requestSpec(URI), Specifications.responseSpec());
         Integer id = 4;
         String token = "QpwL5tke4Pnpja7X4";
